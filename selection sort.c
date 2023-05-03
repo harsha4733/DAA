@@ -1,11 +1,16 @@
 #include <stdio.h>
+
 int main() {
-   int arr[10]={1,93,22,17,12,73,52,9,0,11};
-   int n=10;
-   int i, j, position, swap;
-   for (i = 0; i < (n - 1); i++) {
+   int arr[100],n,position, swap,i,j;
+   printf("Enter the number of elements ");
+   scanf("%d", &n);
+   printf("Enter %d elements: ", n);
+   for (int i = 0; i < n; i++) {
+      scanf("%d", &arr[i]);
+   }
+   for ( i = 0; i < (n - 1); i++) {
       position = i;
-      for (j = i + 1; j < n; j++) {
+      for ( j = i + 1; j < n; j++) {
          if (arr[position] > arr[j])
             position = j;
       }
@@ -15,7 +20,9 @@ int main() {
          arr[position] = swap;
       }
    }
-   for (i = 0; i < n; i++)
-      printf("%d\t", arr[i]);
-   return 0;
+   printf("Sorted array: ");
+   for ( i = 0; i < n; i++)
+      printf("%d ", arr[i]);
+
+   return 0;
 }
